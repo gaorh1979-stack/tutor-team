@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>助教团队</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #d63384;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            letter-spacing: 1px;
+        }
+        
+        .tutors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        
+        .tutor-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tutor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+        }
+        
+        .tutor-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid #ff9a9e;
+        }
+        
+        .tutor-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        /* 高大上的助教介绍文字字体 */
+        .tutor-description {
+            color: #444;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            white-space: pre-line;
+            font-weight: 500;
+            /* 使用更优雅的字体栈 */
+            font-family: 'Segoe UI', 'Noto Sans JP', 'Yu Gothic Medium', 'Meiryo', 'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+            letter-spacing: 0.5px;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .tutors-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+                margin: 25px 0;
+            }
+            
+            .tutor-image {
+                height: 280px;
+            }
+            
+            .tutor-info {
+                padding: 20px;
+            }
+            
+            .tutor-description {
+                font-size: 1.1rem;
+                line-height: 1.7;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tutors-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin: 20px 0;
+            }
+            
+            .tutor-image {
+                height: 240px;
+            }
+            
+            .tutor-info {
+                padding: 18px;
+            }
+            
+            .tutor-description {
+                font-size: 1.05rem;
+                line-height: 1.6;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✨ 助教团队 ✨</h1>
+        <div class="tutors-grid" id="tutorsContainer">            <div class="tutor-card">
+                <img src="images/coco.jpg" alt="coco" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">CoCo
+身高168   体重92  🐻b</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/dudu.jpg" alt="dudu" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">嘟嘟
+ 04 985女大 166 88 清纯INFP</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/duoduo.jpg" alt="duoduo" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">朵朵
+170,体重48公斤.可御可甜，性格好，</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/feifei.jpg" alt="feifei" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">菲菲
+身高：170  体重：55kg   年龄: 22    🐻B</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/gougou.jpg" alt="gougou" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">狗狗
+沪极品白小纯 172 108</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/guodong.jpg" alt="guodong" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">果冻
+年龄：23  身高体重：163 105     ‼️🐻D</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/jiayi.jpg" alt="jiayi" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">佳怡
+20岁 身高165  体重100斤 C</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/juzi.jpg" alt="juzi" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">橘子🍊
+ 06 162cm 90斤 B  本科在读 萝莉</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/kele.jpg" alt="kele" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">可乐
+•身高165  体重45kg  B  04东北妹妹 空乘在读</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/lulu.jpg" alt="lulu" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">鹿鹿，
+00年，身高168，体重52，🐻C</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/luoluo.jpg" alt="luoluo" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">落落  
+20岁  168  50</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/panpan.jpg" alt="panpan" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">盼盼
+170 95斤 06年 ♎️  🐻B</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/pingping.jpg" alt="pingping" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">萍萍
+163cm  98斤，🐻B➕，05年</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/qianyi.jpg" alt="qianyi" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">芊易  
+身高170cm  体重95斤  年龄06年 🐻C</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/sansan.jpg" alt="sansan" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">三三
+163 48 B+</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/suda.jpg" alt="suda" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">苏打
+真🐻真F 、手感软、摸过的都说好）
+04年21岁  身高173cm  体重120斤</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/tuanzai.jpg" alt="tuanzai" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">团仔
+ 06 163 94 🐻D</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/wanyun.jpg" alt="wanyun" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">宛芸 
+165cm 45kg C  05上海  本科在读 小网红</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/weiwei.jpg" alt="weiwei" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">薇薇
+
+21  165  45kg
+性格好 新疆混血感
+可视频验证 本人比较好看</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiangxiang.jpg" alt="xiangxiang" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">香香
+06年 158 90斤  🐻c</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiaobaiyang.jpg" alt="xiaobaiyang" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">快乐小白羊🐏
+
+风格百变可甜可咸人照无差
+170 🐻D</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiaocheng.jpg" alt="xiaocheng" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">小橙 
+163  88  05年 瘦瘦的美感</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiaoke.jpg" alt="xiaoke" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">小可
+ 05年 168 95斤</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiaoyuer.jpg" alt="xiaoyuer" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">小鱼儿
+
+💞刚18 168 100 B➕ 高挑大长腿 瘦 温柔似水 情绪价值绝对到位  乖乖的 可爱学妹型</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xiaozhi.jpg" alt="xiaozhi" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">小知 
+
+身高165 cm体重85斤
+06年犬系妹妹、骨感纯欲甜美风</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xinxin.jpg" alt="xinxin" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">鑫鑫
+06年 身高165 体重97</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xixi.jpg" alt="xixi" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">嘻嘻
+166/96  03年  纯天然雪白E杯</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/xuanbao.jpg" alt="xuanbao" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">炫宝
+身高：175cm    体重：56kg年龄：21岁  罩杯：D+</div>
+                </div>
+            </div>            <div class="tutor-card">
+                <img src="images/youyou.jpg" alt="youyou" class="tutor-image" onerror="this.style.display='none'">
+                <div class="tutor-info">
+                    <div class="tutor-description">呦呦
+年龄：06 胸围：c   体重：92 净身高：165</div>
+                </div>
+            </div>        </div>
+    </div>
+</body>
+</html>

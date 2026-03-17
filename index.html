@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仮之彼女助教恋爱馆</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', 'Arial Rounded MT Bold', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #fff9fb 0%, #fff0f7 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255,182,193,0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(255,105,180,0.1) 0%, transparent 40%),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff69b4' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(135deg, #ff85a2 0%, #ff6b9c 100%);
+            color: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 107, 156, 0.3);
+            transform: perspective(1000px) rotateX(2deg);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-family: 'Chalkboard SE', 'Comic Sans MS', 'Arial Rounded MT Bold', 'PingFang SC', cursive;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        header p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Marker Felt', 'Comic Sans MS', 'Chalkboard SE', 'Arial Rounded MT Bold', cursive;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+            color: #8b4513;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+            animation: pulse 1.5s ease-in-out infinite;
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', 'Arial Rounded MT Bold', cursive;
+            border: 3px dashed #ff8c00;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        .section {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(255, 107, 156, 0.12);
+            border: 2px solid #ffe6f2;
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ff6b9c;
+            font-size: 1.8rem;
+            position: relative;
+            font-family: 'Chalkboard SE', 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+            text-shadow: 0 1px 3px rgba(255, 107, 156, 0.2);
+        }
+        
+        .section h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ff6b9c, transparent);
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .service-card {
+            background: #fff9fb;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #ffe6f2;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+            box-shadow: 0 4px 15px rgba(255, 107, 156, 0.08);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: #ff6b9c;
+            box-shadow: 0 12px 25px rgba(255, 107, 156, 0.2);
+            background: #fff0f5;
+        }
+        
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b9c, #ff85a2);
+        }
+        
+        .service-card h3 {
+            color: #ff6b9c;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: 'Chalkboard SE', 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+        }
+        
+        .service-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            font-family: 'Marker Felt', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+        }
+        
+        .team-link {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #ffebf5 0%, #ffe0f0 100%);
+            border-radius: 18px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(255, 107, 156, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-link::before {
+            content: "✨";
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,107,156,0.4) 0%, transparent 70%);
+            opacity: 0.3;
+            transform: rotate(30deg);
+            animation: float-stars 4s linear infinite;
+        }
+        
+        @keyframes float-stars {
+            0% { transform: rotate(30deg) translateX(-100px); opacity: 0; }
+            20% { opacity: 0.3; }
+            80% { opacity: 0.3; }
+            100% { transform: rotate(30deg) translateX(100px); opacity: 0; }
+        }
+        
+        .team-link a {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9c 0%, #ff85a2 100%);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 156, 0.4);
+            font-family: 'Chalkboard SE', 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 3px solid white;
+            position: relative;
+            z-index: 2;
+            min-width: 280px;
+            text-align: center;
+        }
+        
+        @keyframes jump {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        .team-link a:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 156, 0.4);
+            background: linear-gradient(135deg, #ff85a2 0%, #ffaacc 100%);
+        }
+        
+        .contact-section {
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(255, 107, 156, 0.12);
+            border: 2px solid #ffe6f2;
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ff6b9c;
+            font-size: 1.8rem;
+            font-family: 'Chalkboard SE', 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+        }
+        
+        .contact-info {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 2;
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+        }
+        
+        .contact-info strong {
+            color: #ff6b9c;
+            font-weight: bold;
+        }
+        
+        .contact-info a {
+            color: #ff6b9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Chalkboard SE', 'Comic Sans MS', cursive;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #ff85a2;
+            transform: scale(1.05);
+        }
+        
+        .address-text,
+        .map-link,
+        .business-hours {
+            color: #ff6b9c; /* 使用和电话号码相同的粉色 */
+            font-weight: bold;
+            font-family: 'Chalkboard SE', 'Comic Sans MS', cursive;
+            text-decoration: none;
+        }
+        
+        .map-icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
+        .map-link {
+            display: inline-block;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+        
+        .map-link:hover {
+            color: #ff85a2;
+            background: #fff0f5;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 30px;
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', 'Arial Rounded MT Bold', sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+            }
+            .promo-banner {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            .section {
+                padding: 25px 15px;
+            }
+            .contact-section {
+                padding: 30px 15px;
+            }
+            .team-link {
+                padding: 25px 15px;
+            }
+            .team-link a {
+                font-size: 1.2rem;
+                padding: 14px 30px;
+                min-width: 240px;
+                letter-spacing: 1.2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>仮之彼女助教恋爱馆</h1>
+            <p>刺激 · 新鲜 · 好玩 · 乐趣多</p>
+        </header>
+        
+        <div class="promo-banner">
+            🎉 到店立享 满999立减100的活动 上不封顶 🎉
+        </div>
+        
+        <section class="section">
+            <h2>💕 恋爱助教体验服务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>799/h 高级体验</h3>
+                    <p>包含初级所有服务
+女友般甜蜜体验： 可kiss，摸🐻 (无障碍) 和摸腿
+角色扮演：丝袜/体操服/JK/ 女仆装任选 满足声控、颜控、足控等偏好</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>999/h 高级体验</h3>
+                    <p>包含高级所有服务
+极致暧昧互动；深度亲密接触
+额外还加了🐍😚 ,隔着内内轻抚👇</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>1099/h 快乐飞行</h3>
+                    <p>紧张刺激的飞行棋大冒险，要等哥哥来一起玩 才有意思哦~</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>1998/2h 外出体验</h3>
+                    <p>私人定制约会：吃饭、逛街、看电影
+商务接待/聚会应酬/团建郊游 全程贴心陪伴，安全无忧</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="team-link">
+            <a href="tutor-team.html" target="_blank">✨ 查看我们的助教团队 ✨</a>
+        </div>
+        
+        <section class="contact-section">
+            <h2>📍 店铺信息</h2>
+            <div class="contact-info">
+                <p><strong>🏠 门店地址：</strong><span class="address-text">上海市闵行区繁兴路99号 8号楼3楼309</span></p>
+                <p><strong>🗺️ 地图位置：</strong><a href="https://maps.app.goo.gl/" target="_blank" class="map-link"><span class="map-icon">📍</span>点击查看详细地图位置</a></p>
+                <p><strong>📞 联系电话：</strong><a href="tel:19165626415">191-6562-6415</a></p>
+                <p><strong>💬 微信号码：</strong><a href="https://weixin.qq.com/">19165626415</a></p>
+                <p><strong>⏰ 营业时间：</strong><span class="business-hours">13:00 - 凌晨0:00</span></p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2026 仮之彼女助教恋爱馆 | 专业恋爱陪玩体验服务</p>
+        </footer>
+    </div>
+</body>
+</html>
